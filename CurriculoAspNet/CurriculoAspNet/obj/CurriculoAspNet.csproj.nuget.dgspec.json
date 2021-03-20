@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\clari\\OneDrive\\Documents\\Documents\\FTT\\EC5\\LP 1\\programas\\CadastroCurriculo_N2\\CurriculoAspNet\\CurriculoAspNet\\CurriculoAspNet.csproj": {}
+    "C:\\Users\\1404\\Gustavo\\FTT\\EC5\\Apostilas LP1\\Trabalho CadastroCurriculo\\CurriculoAspNet\\CurriculoAspNet\\CurriculoAspNet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\clari\\OneDrive\\Documents\\Documents\\FTT\\EC5\\LP 1\\programas\\CadastroCurriculo_N2\\CurriculoAspNet\\CurriculoAspNet\\CurriculoAspNet.csproj": {
+    "C:\\Users\\1404\\Gustavo\\FTT\\EC5\\Apostilas LP1\\Trabalho CadastroCurriculo\\CurriculoAspNet\\CurriculoAspNet\\CurriculoAspNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\clari\\OneDrive\\Documents\\Documents\\FTT\\EC5\\LP 1\\programas\\CadastroCurriculo_N2\\CurriculoAspNet\\CurriculoAspNet\\CurriculoAspNet.csproj",
+        "projectUniqueName": "C:\\Users\\1404\\Gustavo\\FTT\\EC5\\Apostilas LP1\\Trabalho CadastroCurriculo\\CurriculoAspNet\\CurriculoAspNet\\CurriculoAspNet.csproj",
         "projectName": "CurriculoAspNet",
-        "projectPath": "C:\\Users\\clari\\OneDrive\\Documents\\Documents\\FTT\\EC5\\LP 1\\programas\\CadastroCurriculo_N2\\CurriculoAspNet\\CurriculoAspNet\\CurriculoAspNet.csproj",
-        "packagesPath": "C:\\Users\\clari\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\clari\\OneDrive\\Documents\\Documents\\FTT\\EC5\\LP 1\\programas\\CadastroCurriculo_N2\\CurriculoAspNet\\CurriculoAspNet\\obj\\",
+        "projectPath": "C:\\Users\\1404\\Gustavo\\FTT\\EC5\\Apostilas LP1\\Trabalho CadastroCurriculo\\CurriculoAspNet\\CurriculoAspNet\\CurriculoAspNet.csproj",
+        "packagesPath": "C:\\Users\\1404\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1404\\Gustavo\\FTT\\EC5\\Apostilas LP1\\Trabalho CadastroCurriculo\\CurriculoAspNet\\CurriculoAspNet\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\clari\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\1404\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
@@ -49,6 +47,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
             }
           },
           "imports": [
@@ -69,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
