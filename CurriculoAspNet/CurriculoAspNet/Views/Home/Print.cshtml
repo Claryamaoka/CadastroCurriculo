@@ -1,0 +1,57 @@
+﻿@model CurriculoViewModel
+@{
+    ViewData["Title"] = "Print";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="root-print">
+    <h1>Currículo</h1>
+    <div>
+        <h2>@Model.main.Nome</h2>
+        <h4>@Model.CPF</h4>
+        <h4>@Model.main.Telefone</h4>
+        <h4>@Model.main.Email</h4>
+        <br />
+        <h3>Formação Acadêmica</h3>
+        @foreach (var estudos in Model.estudos)
+        {
+            <h4>Curso : @estudos.Curso</h4>
+            <h4>Instituição : @estudos.Instituicao</h4>
+            <br />
+        }
+
+        <h3>Experiência Profissional</h3>
+        @foreach (var empresas in Model.empresas)
+        {
+            <h4>Cargo Ocupado : @empresas.Cargo</h4>
+            <h4>Empresa : @empresas.Empresa</h4>
+            <br />
+        }
+
+        <h3>Idiomas</h3>
+        @foreach (var idiomas in Model.idiomas)
+        {
+            @if (@idiomas.Habilidade == 1)
+            {
+                <h4>@idiomas.Idioma : nível Básico</h4>
+            }
+            else if (@idiomas.Habilidade == 2)
+            {
+                <h4>@idiomas.Idioma : nível Intermediário</h4>
+            }
+            else if (@idiomas.Habilidade == 3)
+            {
+                <h4>@idiomas.Idioma : nível Avançado</h4>
+            }
+            else if (@idiomas.Habilidade == 4)
+            {
+                <h4>@idiomas.Idioma : nível Fluente</h4>
+            }
+        }
+
+
+
+    </div>
+</div>
+
+

@@ -1,0 +1,172 @@
+﻿#homeBody {
+    font-family: 'Kiwi Maru', serif;
+    background-color: var(--color-primary);
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+#homeContent {
+}
+
+#slogan-title {
+    color: var(--color-text-in-primary);
+}
+
+.image-logo {
+    width: 450px;
+    height: auto;
+}
+
+#IndexTitle {
+    font-size: 80px;
+}
+
+#homeContent a {
+}
+
+#homeContent h1 {
+    color: var(--color-line-in-white)
+}
+
+.total-connections {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-in-primary);
+}
+
+.buttons-container {
+    display: flex;
+    margin-top: 25px;
+}
+
+    .buttons-container a {
+        width: 150px;
+        height: 70px;
+        border-radius: 0.8rem;
+        margin-right: 1.6rem;
+        font: 500 2.4rem 'Kiwi Maru';
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: background 0.2s;
+        color: var(--color-button-text);
+    }
+
+        .buttons-container a.cadastre {
+            background: var(--color-primary-lighter);
+        }
+
+            .buttons-container a.cadastre:hover {
+                background: var(--color-primary-light);
+            }
+
+        .buttons-container a.sobre {
+            background: var(--color-secondary);
+            margin-right: 0;
+        }
+
+            .buttons-container a.sobre:hover {
+                background: #F97F5F;
+            }
+
+
+#form-container {
+    background-color: white;
+    padding: 80px;
+    border-radius: 50px;
+}
+
+#curriculo-title {
+    color: var(--color-text-in-primary);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
+
+.navbar {
+    background-color: var(--color-primary-darker) !important;
+    border-bottom: 1px solid var(--color-primary-darker) !important;
+}
+
+    .navbar a.white {
+        color: var(--color-line-in-white);
+    }
+
+        .navbar a.white.nav-link {
+            color: var(--color-line-in-white);
+        }
+
+select option {
+    margin: 40px;
+    background: var(--color-primary-lighter);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+select {
+    background: var(--color-primary-light);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    border: 0;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.text-center {
+    text-align: center;
+    color: white;
+}
+
+.text-color-white {
+    color: var(--color-line-in-white);
+}
+
+.print-sheet {
+    width: 210mm;
+    height: 297mm;
+    background-color: white;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    padding: 50px 40px;
+}
+
+@media print {
+    .print-sheet {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border: 0px;
+        text-align: left;
+        padding: 50px 40px;
+    }
+
+    hr {
+        border: none;
+        height: 2px;
+        /* Set the hr color */
+        color: #333; /* old IE */
+        background-color: #333; /* Modern Browsers */
+    }
+
+    .text-curriculo {
+        display: none;
+    }
+
+    div.col-md-12 {
+        justify-content: initial !important;
+        display: block !important;
+        padding: 0 !important;
+    }
+}

@@ -1,0 +1,204 @@
+﻿@model CurriculoViewModel
+@{
+    ViewData["Title"] = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h1>Curriculo</h1>
+<form action="Salvar" method="post">
+    <input type="hidden" name="Operacao" value="@ViewBag.Operacao" />
+
+    <h2>Dados Pessoais</h2>
+    <div>
+        <label for="Nome" class="control-label">Nome</label>
+        <input required asp-for="main.Nome" class="form-control" />
+        <span asp-validation-for="main.Nome" class="text-danger"></span>
+        <br />
+
+        <label for="CPF" class="control-label">CPF</label>
+
+        @if (ViewBag.Operacao == "I")
+        {
+            <input asp-for="CPF" class="form-control" required />
+        }
+        else
+        {
+            <input asp-for="CPF" class="form-control" readonly />
+        }
+        <span asp-validation-for="CPF" class="text-danger"></span>
+        <br />
+
+        <label for="Telefone" class="control-label">Telefone</label>
+        <input required asp-for="main.Telefone" class="form-control" />
+        <span asp-validation-for="main.Telefone" class="text-danger"></span>
+        <br />
+        <label for="Email" class="control-label">Email</label>
+        <input required type="text" asp-for="main.Email" class="form-control" />
+        <span asp-validation-for="main.Email" class="text-danger"></span>
+        <br />
+        <label for="CargoPretendido" class="control-label">Cargo Pretendido</label>
+        <input required type="text" asp-for="main.CargoPretendido" class="form-control" />
+        <span asp-validation-for="main.CargoPretendido" class="text-danger"></span>
+        <br />
+
+    </div>
+
+    <h2>Endereço</h2>
+    <div>
+        <a href="/home/FormAddress">Cadastrar novo endereço</a>
+        <br />
+        <label for="CEP" class="control-label">CEP</label>
+        <select asp-for="main.endereco.CEP" asp-items="ViewBag.Enderecos" class="form-control" required id="select-cep"></select>
+        <br />
+        <label for="Street" class="control-label">Rua</label>
+        <input asp-for="main.endereco.Street" class="form-control" readonly id="street" />
+        <br />
+        <label for="Number" class="control-label">Número</label>
+        <input asp-for="main.endereco.Number" class="form-control" readonly id="number" />
+        <br />
+        <label for="District" class="control-label">Bairro</label>
+        <input asp-for="main.endereco.District" class="form-control" readonly id="district" />
+        <br />
+        <label for="City" class="control-label">Cidade</label>
+        <input asp-for="main.endereco.City" class="form-control" readonly id="city" />
+        <br />
+        <label for="State" class="control-label">Estado</label>
+        <input asp-for="main.endereco.State" class="form-control" readonly id="state" />
+        <br />
+    </div>
+    
+    <fieldset id="schedule-course">
+        <h2>Informações Acadêmicas e Cursos</h2>
+        <button type="button" id="add-course">+ Novo Curso</button>
+        <div class="item-course">
+            <input asp-for="estudos[0].Id" hidden />
+            <label for="Curso" class="control-label">Curso</label>
+            <input type="text" asp-for="estudos[0].Curso" class="form-control" />
+            <span asp-validation-for="estudos[0].Curso" class="text-danger"></span>
+            <br />
+            <label for="Instituicao" class="control-label">Instituição</label>
+            <input type="text" asp-for="estudos[0].Instituicao" class="form-control" />
+            <span asp-validation-for="estudos[0].Instituicao" class="text-danger"></span>
+            <br />
+        </div>
+        <div class="item-course" id="course-one" hidden>
+            <input asp-for="estudos[1].Id" hidden />
+            <label for="Curso" class="control-label">Curso</label>
+            <input type="text" asp-for="estudos[1].Curso" class="form-control" />
+            <span asp-validation-for="estudos[1].Curso" class="text-danger"></span>
+            <br />
+            <label for="Instituicao" class="control-label">Instituição</label>
+            <input type="text" asp-for="estudos[1].Instituicao" class="form-control" />
+            <span asp-validation-for="estudos[1].Instituicao" class="text-danger"></span>
+            <br />
+        </div>
+        <div class="item-course" id="course-two" hidden>
+            <input asp-for="estudos[2].Id" hidden />
+            <label for="Curso" class="control-label">Curso</label>
+            <input type="text" asp-for="estudos[2].Curso" class="form-control" />
+            <span asp-validation-for="estudos[2].Curso" class="text-danger"></span>
+            <br />
+            <label for="Instituicao" class="control-label">Instituição</label>
+            <input type="text" asp-for="estudos[2].Instituicao" class="form-control" />
+            <span asp-validation-for="estudos[2].Instituicao" class="text-danger"></span>
+            <br />
+        </div>
+    </fieldset>
+
+    <fieldset id="schedule-profession">
+        <h2>Experiências Profissionais</h2>
+        <button type="button" id="add-profession">+ Nova Experiência Profissional</button>
+        <div class="item-profession">
+            <input asp-for="empresas[0].Id" hidden />
+            <label for="Cargo" class="control-label">Cargo</label>
+            <input type="text" asp-for="empresas[0].Cargo" class="form-control" />
+            <span asp-validation-for="empresas[0].Cargo" class="text-danger"></span>
+            <br />
+            <label for="Empresa" class="control-label">Empresa</label>
+            <input type="text" asp-for="empresas[0].Empresa" class="form-control" />
+            <span asp-validation-for="empresas[0].Empresa" class="text-danger"></span>
+            <br />
+        </div>
+        <div class="item-profession" hidden id="profession-one">
+            <input asp-for="empresas[1].Id" hidden />
+            <label for="Cargo" class="control-label">Cargo</label>
+            <input type="text" asp-for="empresas[1].Cargo" class="form-control" />
+            <span asp-validation-for="empresas[1].Cargo" class="text-danger"></span>
+            <br />
+            <label for="Empresa" class="control-label">Empresa</label>
+            <input type="text" asp-for="empresas[1].Empresa" class="form-control" />
+            <span asp-validation-for="empresas[1].Empresa" class="text-danger"></span>
+            <br />
+        </div>
+        <div class="item-profession" hidden id="profession-two">
+            <input asp-for="empresas[2].Id" hidden />
+            <label for="Cargo" class="control-label">Cargo</label>
+            <input type="text" asp-for="empresas[2].Cargo" class="form-control" />
+            <span asp-validation-for="empresas[2].Cargo" class="text-danger"></span>
+            <br />
+            <label for="Empresa" class="control-label">Empresa</label>
+            <input type="text" asp-for="empresas[2].Empresa" class="form-control" />
+            <span asp-validation-for="empresas[2].Empresa" class="text-danger"></span>
+            <br />
+        </div>
+    </fieldset>
+
+    <fieldset id="schedule-idiom">
+        <h2>Dados de Idioma</h2>
+        <button type="button" id="add-idiom">+ Novo idioma</button>
+        <div class="item-idiom">
+            <input asp-for="idiomas[0].Id" hidden />
+            <label for="Idioma" class="control-label">Idioma</label>
+            <input type="text" asp-for="idiomas[0].Idioma" class="form-control" />
+            <span asp-validation-for="idiomas[0].Idioma" class="text-danger"></span>
+            <br />
+            <label for="Nivel" class="control-label">Nível</label>
+            <select id="habilidade" asp-for="idiomas[0].Habilidade">
+                <option value="1">Básico</option>
+                <option value="2">Intermediário</option>
+                <option value="3">Avançado</option>
+                <option value="4">Fluente</option>
+            </select>
+            <span asp-validation-for="idiomas[0].Habilidade" class="text-danger"></span>
+            <br />
+        </div>
+        <div class="item-idiom" hidden id="idiom-one">
+            <input asp-for="idiomas[1].Id" hidden />
+            <label for="Idioma" class="control-label">Idioma</label>
+            <input type="text" asp-for="idiomas[1].Idioma" class="form-control" />
+            <span asp-validation-for="idiomas[1].Idioma" class="text-danger"></span>
+            <br />
+            <label for="Nivel" class="control-label">Nível</label>
+            <select id="habilidade" asp-for="idiomas[1].Habilidade">
+                <option value="1">Básico</option>
+                <option value="2">Intermediário</option>
+                <option value="3">Avançado</option>
+                <option value="4">Fluente</option>
+            </select>
+            <span asp-validation-for="idiomas[1].Habilidade" class="text-danger"></span>
+            <br />
+        </div>
+        <div class="item-idiom" hidden id="idiom-two">
+            <input asp-for="idiomas[2].Id" hidden />
+            <label for="Idioma" class="control-label">Idioma</label>
+            <input type="text" asp-for="idiomas[2].Idioma" class="form-control" />
+            <span asp-validation-for="idiomas[2].Idioma" class="text-danger"></span>
+            <br />
+            <label for="Nivel" class="control-label">Nível</label>
+            <select id="habilidade" asp-for="idiomas[2].Habilidade">
+                <option value="1">Básico</option>
+                <option value="2">Intermediário</option>
+                <option value="3">Avançado</option>
+                <option value="4">Fluente</option>
+            </select>
+            <span asp-validation-for="idiomas[2].Habilidade" class="text-danger"></span>
+            <br />
+        </div>
+    </fieldset>
+
+    <input type="submit" value="Salvar dados" />
+    <br />
+</form>
+

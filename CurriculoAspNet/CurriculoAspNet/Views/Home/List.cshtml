@@ -1,0 +1,46 @@
+﻿@model List<CurriculoViewModel>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Currículos Cadastrados</h1>
+
+<a href="/home/novoCurriculo">Cadastrar novo currículo</a>
+<br />
+
+<table class="table table-responsive">
+
+    <tr>
+        <th>Alterar</th>
+        <th>Excluir</th>
+        <th>Imprimir</th>
+        <th>CPF</th>
+        <th>Nome</th>
+        <th>CEP</th>
+        <th>Rua</th>
+    </tr>
+
+    @foreach (var curriculo in Model)
+    {
+        <tr>
+            <td><a href="Edit?cpf=@curriculo.CPF">Editar</a> </td>
+            <td><a href="javascript:apagarRegistro(@curriculo.CPF)">Apagar</a> </td>
+            <td><a href="/home/Print?cpf=@curriculo.CPF">Imprimir</a> </td>
+            <td>@curriculo.CPF</td>
+            <td>@curriculo.main.Nome</td>
+            <td>@curriculo.main.endereco.CEP</td>
+            <td>@curriculo.main.endereco.Street</td>
+        </tr>
+    }
+
+
+</table>
+
+<script>
+     function apagarRegistro(cpf)
+     {
+         if (confirm('Confirma a exclusão do registro?'))
+            location.href = 'Delete?cpf=' + cpf;
+     }
+</script>

@@ -1,0 +1,44 @@
+﻿@model CurriculoViewModel
+@{
+    ViewData["Title"] = "Effort - Address";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Endereço</h1>
+<a href="/home/NovoCurriculo">Voltar</a>
+<br />
+<form action="SalvarEndereco" method="post">
+
+    <h2>Cadastro de Endereço</h2>
+    <div>
+        <label for="CEP" class="control-label">CEP</label>
+        <input required type="number" asp-for="main.endereco.CEP" class="form-control" />
+        <span asp-validation-for="main.endereco.CEP" class="text-danger"></span>
+        <br />
+        <label for="Street" class="control-label">Rua</label>
+        <input required type="text" asp-for="main.endereco.Street" class="form-control" />
+        <span asp-validation-for="main.endereco.Street" class="text-danger"></span>
+        <br />
+        <label for="District" class="control-label">Bairro</label>
+        <input required asp-for="main.endereco.District" class="form-control" />
+        <span asp-validation-for="main.endereco.District" class="text-danger"></span>
+        <br />
+        <label for="State" class="control-label">Estado</label>
+        <input required asp-for="main.endereco.State" class="form-control" />
+        <span asp-validation-for="main.endereco.State" class="text-danger"></span>
+        <br />
+        <label for="City" class="control-label">Cidade</label>
+        <input required asp-for="main.endereco.City" class="form-control" />
+        <span asp-validation-for="main.endereco.City" class="text-danger"></span>
+        <br />
+        <label for="Number" class="control-label">Número</label>
+        <input required asp-for="main.endereco.Number" class="form-control" />
+        <span asp-validation-for="main.endereco.Number" class="text-danger"></span>
+        <br />
+
+    </div>
+
+    <input type="submit" value="Salvar Endereço" />
+    <br />
+</form>
+
